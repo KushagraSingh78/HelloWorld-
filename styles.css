@@ -1,0 +1,137 @@
+/* styles.css */
+
+/* --- Reset & Basic Setup --- */
+
+*, *::before, *::after { /* Universal reset */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern sans-serif font */
+      line-height: 1.6;
+      background-color: #222121; /* Darkish background */
+      color: #c3ebf7; /* Cool text colour */
+      display: flex; /* Use flexbox for overall page layout*/
+      justify-content: center; /* Horizontally center the content*/
+      align-items: center;     /* Vertically center the content*/
+      min-height: 100vh;    /* Make sure the content takes at least full viewport height */
+  }
+  /* --- Container --- */
+  
+  .container {
+      width: 85%; /* Responsive width */
+      max-width: 800px; /* Limits the maximum width */
+      margin: 2rem auto; /* Center the container with some top/bottom margin */
+      padding: 1.5rem;
+      background-color: #000000; /* Pitch Black background for the content area */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 2px 5px rgba(202, 202, 202, 0.1); /* Subtle light */
+  }
+  
+  /* --- Header --- */
+  .header {
+      text-align: center; /* Center the heading */
+      margin-bottom: 1.5rem;
+  }
+  
+  .header h1 {
+      font-size: 2.5rem;  /*Larger font size*/
+      color: #4CAF50; /* A modern green color */
+      margin-bottom: 0.5rem; /* Space below the heading */
+  }
+  /* --- Intro Section --- */
+  
+  .intro p {
+      font-size: 20px; /* Increasing text size */
+      margin-bottom: 1rem; /* Space between paragraphs*/
+  }
+  .intro strong{
+      color: #4CAF50; /* Change Strong Tag Color */
+  }
+  
+  /* --- Image Section --- */
+  
+  .image-section {
+      text-align: center; /* Center the image */
+  }
+  
+  .image-section figure {
+      margin: 0; /* Remove default figure margins */
+  }
+  
+  .image-section img {
+      max-width: 100%; /* Makes the image responsive */
+      height: auto;    /* Maintain Aspect Ratio */
+      border-radius: 8px; /* Rounded corners for the image */
+      display: block;  /* Remove extra space below inline elements */
+      margin-left: auto; /* Used to center block elements */
+      margin-right: auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /*Stronger shadow for depth*/
+  }
+  
+  .image-section figcaption {
+      font-size: 20px; /* Increasing text size */
+      margin-top: 0.5rem; /* Space between image and caption */
+      color: #eceaea;        /* White text for caption */
+  }
+/* --- Counter Container --- */
+.counter-container {
+    position: fixed; /* Fixed positioning */
+    top: 10px;       /* 10px from the top */
+    right: 10px;     /* 10px from the right */
+    background-color: rgba(0, 0, 0, 0.7); /* Made background dark and transparent */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;   /* Make sure it's on top of everything */
+	color: white; /*Set Text color to white*/
+}
+.counter-container p {
+	font-size: 20px; /* Increasing font size */
+}
+
+/* --- Particle Container --- */
+
+#particle-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /*Ensure click events passes through*/
+  z-index: 999; /*Below Counter*/
+}
+
+.money-particle {
+    position: absolute;
+    width: 35px;  /* Made particle a bit bigger */
+    height: 35px;
+	/* Removed background Image */
+    pointer-events: none;
+    animation: moveAndFade 1.5s ease-out forwards;
+}
+
+/*Added Image tag*/
+.money-particle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire element */
+}
+
+/*Improved Falling Animation*/
+@keyframes moveAndFade {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg); /* Initial rotation */
+  }
+  80%{
+    opacity: 1;
+    transform: translate(30px, 60vh) rotate(360deg); /* Rotate during fall */
+  }
+  100% {
+    opacity: 0;
+    transform: translate(50px, 100vh) rotate(720deg); /* Rotate and fall off-screen */
+  }
+}
